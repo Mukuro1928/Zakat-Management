@@ -23,22 +23,22 @@ public class PersonalZakatManagement {
                 //Getting Input from user
                 choice= input.nextInt();    
                 switch(choice){
-                    case 1: result = zakatPendapatan();
+                    case 1: result = ZakatType.zakatPendapatan();
                             zakat="Zakat Pendapatan";
                             break;
-                    case 2: result = zakatPerniagaan();
+                    case 2: result = ZakatType.zakatPerniagaan();
                             zakat="Zakat Perniagaan";
                             break;
-                    case 3: result = zakatEmas();
+                    case 3: result = ZakatType.zakatEmas();
                             zakat="Zakat Emas";
                             break;
-                    case 4: result = zakatSimpanan();
+                    case 4: result = ZakatType.zakatSimpanan();
                             zakat="Zakat Simpanan";
                             break;
-                    case 5: result = zakatPelaburan();        
+                    case 5: result = ZakatType.zakatPelaburan();        
                             zakat="Zakat Pelaburan";
                             break;
-                    case 6: result = zakatASB();
+                    case 6: result = ZakatType.zakatASB();
                             zakat="Zakat ASB";
                             break;
                     default: System.out.println("Invalid Input, Please enter only number 1 to 6 only");                
@@ -61,43 +61,5 @@ public class PersonalZakatManagement {
         System.out.print("The total " + zakat + " you have to pay is RM");
         //Rounding the numbers to 2 decimal places.
         System.out.format("%.2f", result);
-    }
-    
-        
-    public static double zakatPendapatan(){
-        double result=0;
-
-        
-        return result;
-    }
-    
-    public static double zakatPerniagaan(){
-        double result=0;
-        
-        return result;
-    }
-    
-    public static double zakatEmas(){
-        double result=0;
-        
-        return result;
-    }
-    
-    public static double zakatSimpanan(){
-        double result=0;
-        
-        return result;
-    }
-    
-    public static double zakatPelaburan(){
-        double result=0;
-        
-        return result;
-    }
-    
-    public static double zakatASB(){
-        double result=0;
-        
-        return result;
     }
 }
