@@ -26,8 +26,22 @@ public class PersonalZakatManagement {
                     case 1: result = ZakatType.zakatPendapatan();
                             zakat="Zakat Pendapatan";
                             break;
-                    case 2: result = ZakatType.zakatPerniagaan();
-                            zakat="Zakat Perniagaan";
+                    case 2: zakat="Zakat Perniagaan";
+                            double income=0, netProfit=0, debtGiven=0, stock=0, unpaidDebt=0, tax=0, outstandingOperation=0;
+                            System.out.print("Enter net profit: ");
+                            netProfit= input.nextDouble();
+                            System.out.print("Enter business bank balance: ");
+                            debtGiven= input.nextDouble();
+                            System.out.print("Enter the pending amount of debt given: ");
+                            stock= input.nextDouble();
+                            System.out.print("Any unpaid debts?");
+                            unpaidDebt=input.nextDouble();
+                            System.out.print("Any unpaid tax?");
+                            tax=input.nextDouble();
+                            System.out.print("Any Outstanding Operations?");
+                            outstandingOperation=input.nextDouble();
+                            result = ZakatType.zakatPerniagaan(income, netProfit, debtGiven, stock, unpaidDebt, tax, outstandingOperation);
+                            
                             break;
                     case 3: result = ZakatType.zakatEmas();
                             zakat="Zakat Emas";
