@@ -71,9 +71,13 @@ public class PersonalZakatManagement {
                 System.out.println("An unexpected error has occured: " + e.getMessage());
             }      
         }while(choice!=1 && choice!=2 && choice!=3 && choice!=4 && choice!=5 && choice!=6);
-        double resultRounded=Math.round(result);
-        System.out.print("The total " + zakat + " you have to pay is RM");
-        //Rounding the numbers to 2 decimal places.
-        System.out.format("%.2f", result);
+        if( result!=-1){
+            System.out.print("The total " + zakat + " you have to pay is RM");
+            //Rounding the numbers to 2 decimal places.
+            System.out.format("%.2f", result);
+        }
+        else{
+            System.out.println("You does not meet the nisab to pay " + zakat);
+        }
     }
 }
