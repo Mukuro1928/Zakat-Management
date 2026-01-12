@@ -1,10 +1,10 @@
 package personalzakatmanagement;
 
 public class ZakatType {
-    public static double zakatPendapatan(double yearlyProfit, double[] dependants, double nurseryCost){
+    public static double zakatPendapatan(double yearlyProfit, double[] dependants, double nurseryCost){ //by Rizq
         double result = 0, totalDeduction = 0;
         double EPF, netIncome;
-        double[] rates = {4944, 7356, 4896, 2100, 2964, 2916};
+        double[] rates = {4944, 7356, 4896, 2100, 2964, 2916}; // assigning respective rate for each dependant category
 
         //calculating total deduction based on rates
         for (int i = 0; i < dependants.length; i++) {
@@ -92,6 +92,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
