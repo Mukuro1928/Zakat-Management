@@ -84,38 +84,24 @@ public class PersonalZakatManagement {
                             result = ZakatType.zakatSimpanan(saving, payrate);
                             break;
                     case 5: zakat="Zakat Pelaburan";
-                            double invNisab = 35449.00;
                             
-                            System.out.println("\nEnter current investment value (RM): ");
+                            System.out.print("\nEnter ASB value you own (RM): ");
                             double invValue = input.nextDouble();
-                            System.out.print("Enter investment profit/divident (RM): ");
-                            double profit = input.nextDouble(); 
+                            System.out.print("Enter ASB dividend (RM): ");
+                            double profit = input.nextDouble();
                             
-                            double invTotal = invValue+profit;
-                            
-                            if(invTotal>invNisab){
-                                result = ZakatType.zakatPelaburan(invTotal);
-                            }else{
-                                 System.out.println("\nYou does not meet the nisab to pay " + zakat);
-                            }
+                            result = ZakatType.zakatPelaburan(invValue, profit);
                                                
                             break;
                     case 6: zakat="Zakat ASB";
-                            double asbNisab = 35449.00;
                             
                             System.out.print("\nEnter ASB value you own (RM): ");
                             double asbValue = input.nextDouble();
                             System.out.print("Enter ASB dividend (RM): ");
                             double dividend = input.nextDouble();
                             
-                            double asbTotal = asbValue+dividend;
+                            result = ZakatType.zakatASB(asbValue, dividend);
                             
-                            if(asbTotal>=asbNisab){
-                                result = ZakatType.zakatASB(asbTotal);
-                            }else{
-                                System.out.println("\nYou does not meet the nisab to pay " + zakat);
-                            }
-                        
                             break;
                     default: System.out.println("Invalid Input, Please enter only number 1 to 6 only");                
                 }
