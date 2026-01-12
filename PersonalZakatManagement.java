@@ -134,7 +134,7 @@ public class PersonalZakatManagement {
             System.out.format("%.2f", result);
         }
         else{
-            System.out.println("You does not meet the nisab to pay " + zakat);
+            System.out.println("You do not meet the nisab required to pay " + zakat);
         }
     }
 }
