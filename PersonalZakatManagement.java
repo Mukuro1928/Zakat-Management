@@ -59,7 +59,7 @@ public class PersonalZakatManagement {
                             outstandingOperation=input.nextDouble();
                             result = ZakatType.zakatPerniagaan(income, netProfit, debtGiven, stock, unpaidDebt, tax, outstandingOperation);
                             break;
-                    case 3: result = ZakatType.zakatEmas();
+                    case 3: zakat="Zakat Emas"; 
                             double weightGold=0, priceGold=554, nisab=85, payrate=0.025;
                             System.out.print("Gold Zakat calculation for the year: ");
                             int year = input.nextInt();
@@ -68,7 +68,6 @@ public class PersonalZakatManagement {
                             System.out.print("The Value of Gold Nisab for Zakat (Selangor 2025): "+nisab+"g");
                             System.out.print("Current Gold Price (1g): RM"+priceGold);
                             result = ZakatType.zakatEmas(weightGold, priceGold, nisab, payrate);
-                            zakat="Zakat Emas";
                             break;
                     case 4: zakat="Zakat Simpanan";
                             double saving=0, payrate=0.025;
