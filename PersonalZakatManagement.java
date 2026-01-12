@@ -73,8 +73,21 @@ public class PersonalZakatManagement {
                     case 5: result = ZakatType.zakatPelaburan();        
                             zakat="Zakat Pelaburan";
                             break;
-                    case 6: result = ZakatType.zakatASB();
-                            zakat="Zakat ASB";
+                    case 6: zakat="Zakat ASB";
+                            double asbNisab = 35449.00;
+                            
+                            System.out.print("\nEnter ASB value you own (RM): ");
+                            double asbValue = input.nextDouble();
+                            
+                            if(asbValue>=asbNisab){
+                                System.out.print("Enter ASB dividend (RM): ");
+                                double dividend = input.nextDouble(); 
+                                
+                                result = ZakatType.zakatASB(asbValue, dividend);
+                            }else{
+                                System.out.println("\nYou does not meet the nisab to pay Zakat ASB");
+                            }
+                            result = ZakatType.zakatASB();
                             break;
                     default: System.out.println("Invalid Input, Please enter only number 1 to 6 only");                
                 }
