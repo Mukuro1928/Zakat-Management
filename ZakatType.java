@@ -46,11 +46,11 @@ public class ZakatType {
     
     public static double zakatEmas(double weightGold, double priceGold, double nisab, double payrate){
         double result=0, gold=0;
-        if(weightGold>=nisab){
+        if(weightGold>=nisab){ //if-else statement for nisab
             gold= weightGold*priceGold;
-            result= gold*payrate;
+            result= gold*payrate; //calculate zakat emas
         }else{
-            result= -1;
+            result= -1; //don't need to pay zakat
         }
         
         return result;
@@ -58,7 +58,7 @@ public class ZakatType {
     
     public static double zakatSimpanan(double saving, double payrate){
         double result=0;
-        result= saving*payrate;
+        result= saving*payrate; //calculate zakat simpanan
         return result;
     }
     
@@ -92,6 +92,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
