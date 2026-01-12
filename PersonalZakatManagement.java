@@ -67,7 +67,7 @@ public class PersonalZakatManagement {
                             result = ZakatType.zakatPerniagaan(asset, liability);
                 
                             break;
-                    case 3: zakat="Zakat Emas"; 
+                    case 3: zakat="Zakat Emas"; //by Aiman : Zakat Emas
                             double weightGold=0, priceGold=554, nisab=85, payrate=0.025; //declare weight and price for gold and nisab 
                             System.out.print("Gold Zakat calculation for the year: ");
                             int year = input.nextInt();
@@ -78,7 +78,7 @@ public class PersonalZakatManagement {
                             result = ZakatType.zakatEmas(weightGold, priceGold, nisab, payrate); //zakat emas method
                         
                             break;
-                    case 4: zakat="Zakat Simpanan";
+                    case 4: zakat="Zakat Simpanan"; //by Aiman : Zakat Simpanan
                             double saving=0;
                             payrate=0.025; //declare variable saving and zakat rate
                             System.out.print("Calculation of Zakat on Savings for the haul year: ");
