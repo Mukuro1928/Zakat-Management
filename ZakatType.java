@@ -23,11 +23,15 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatPerniagaan(double income,double profit, double debtGiven, double stock,double  unpaidDebt,double  tax, double outstandingOp){
+    public static double zakatPerniagaan(double[] income,double[]  spending){
         double result=0;
-        double liability, asset, totalWealth;
-        asset=profit+debtGiven+stock;
-        liability=unpaidDebt + tax + outstandingOp;
+        double liability=0, asset=0, totalWealth=0;
+        for(int i=0;i<income.length;i++){
+           asset+=income[i];
+        }
+        for(int i=0;i<spending.length;i++){
+           asset+=spending[i];
+        }
         totalWealth= asset - liability;
         if(totalWealth>=49300){
             result=totalWealth*(2.5/100);
@@ -35,8 +39,7 @@ public class ZakatType {
         else {
             result=-1;
         }
-        
-        
+             
         return result;
     }
     
@@ -74,6 +77,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
