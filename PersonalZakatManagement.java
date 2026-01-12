@@ -46,8 +46,9 @@ public class PersonalZakatManagement {
                     case 3: result = ZakatType.zakatEmas();
                             zakat="Zakat Emas";
                             break;
-                    case 4: result = ZakatType.zakatSimpanan();
-                            zakat="Zakat Simpanan";
+                    case 4: zakat="Zakat Simpanan";
+                            double saving=0, 
+                            result = ZakatType.zakatSimpanan();
                             break;
                     case 5: result = ZakatType.zakatPelaburan();        
                             zakat="Zakat Pelaburan";
