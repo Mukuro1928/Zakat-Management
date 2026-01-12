@@ -23,7 +23,7 @@ public class PersonalZakatManagement {
                 //Getting Input from user
                 choice= input.nextInt();    
                 switch(choice){
-                    case 1: zakat="Zakat Pendapatan";
+                    case 1: zakat="Zakat Pendapatan"; //by Rizq
                             double yearlyProfit;
                             double nurseryCost;
                             double[] dependants = new double[6]; // dependant array for easier input data access
