@@ -82,28 +82,30 @@ public class PersonalZakatManagement {
                             
                             System.out.println("\nEnter current investment value (RM): ");
                             double invValue = input.nextDouble();
+                            System.out.print("Enter investment profit/divident (RM): ");
+                            double profit = input.nextDouble(); 
                             
-                            if(invValue>=invNisab){
-                                System.out.print("Enter investment profit/divident (RM): ");
-                                double dividend = input.nextDouble(); 
-                                
-                                result = ZakatType.zakatPelaburan(invValue, dividend);
+                            double invTotal = invValue+profit;
+                            
+                            if(invTotal>invNisab){
+                                result = ZakatType.zakatPelaburan(invTotal);
                             }else{
-                                System.out.println("\nYou does not meet the nisab to pay " + zakat);
+                                 System.out.println("\nYou does not meet the nisab to pay " + zakat);
                             }
-                    
+                                               
                             break;
                     case 6: zakat="Zakat ASB";
                             double asbNisab = 35449.00;
                             
                             System.out.print("\nEnter ASB value you own (RM): ");
                             double asbValue = input.nextDouble();
+                            System.out.print("Enter ASB dividend (RM): ");
+                            double dividend = input.nextDouble();
                             
-                            if(asbValue>=asbNisab){
-                                System.out.print("Enter ASB dividend (RM): ");
-                                double dividend = input.nextDouble(); 
-                                
-                                result = ZakatType.zakatASB(asbValue, dividend);
+                            double asbTotal = asbValue+dividend;
+                            
+                            if(asbTotal>=asbNisab){
+                                result = ZakatType.zakatASB(asbTotal);
                             }else{
                                 System.out.println("\nYou does not meet the nisab to pay " + zakat);
                             }
