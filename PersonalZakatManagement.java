@@ -65,25 +65,27 @@ public class PersonalZakatManagement {
                             liability[2]=input.nextDouble();
                             //calling zakatPerniagaan method to calculate zakat
                             result = ZakatType.zakatPerniagaan(asset, liability);
-                            
+                
                             break;
                     case 3: zakat="Zakat Emas"; 
-                            double weightGold=0, priceGold=554, nisab=85, payrate=0.025;
+                            double weightGold=0, priceGold=554, nisab=85, payrate=0.025; //declare weight and price for gold and nisab 
                             System.out.print("Gold Zakat calculation for the year: ");
                             int year = input.nextInt();
                             System.out.print("Total Weight(g) of Gold at the End of the Year "+year+": ");
                             weightGold = input.nextDouble();
                             System.out.print("The Value of Gold Nisab for Zakat (Selangor 2025): "+nisab+"g");
                             System.out.print("Current Gold Price (1g): RM"+priceGold);
-                            result = ZakatType.zakatEmas(weightGold, priceGold, nisab, payrate);
+                            result = ZakatType.zakatEmas(weightGold, priceGold, nisab, payrate); //zakat emas method
+                        
                             break;
                     case 4: zakat="Zakat Simpanan";
-                            double saving=0, payrate=0.025;
+                            double saving=0, payrate=0.025; //declare variable saving and zakat rate
                             System.out.print("Calculation of Zakat on Savings for the haul year: ");
                             int year = input.nextInt();
                             System.out.print("Enter estimated Total Savings for the year "+year+": ");
                             saving= input.nextDouble();
-                            result = ZakatType.zakatSimpanan(saving, payrate);
+                            result = ZakatType.zakatSimpanan(saving, payrate); //zakat simpanan method
+                        
                             break;
                     case 5: zakat="Zakat Pelaburan";
                             
