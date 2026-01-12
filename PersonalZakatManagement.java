@@ -23,8 +23,25 @@ public class PersonalZakatManagement {
                 //Getting Input from user
                 choice= input.nextInt();    
                 switch(choice){
-                    case 1: result = ZakatType.zakatPendapatan();
-                            zakat="Zakat Pendapatan";
+                    case 1: zakat="Zakat Pendapatan";
+                            double yearlyProfit = 0, adultDependant = 0, studentDependant = 0, teenDependant = 0, toddlerDependant = 0, disabledDependant = 0, chronicDependant = 0, nurseryCost = 0;
+                            System.out.print("Enter yearly net profit: ");
+                            yearlyProfit = input.nextDouble();
+                            System.out.print("Enter amount of dependants that are above 18 years old: ");
+                            adultDependant = input.nextDouble();
+                            System.out.print("Enter amount of dependants that is studying in IPT: ");
+                            studentDependant = input.nextDouble();
+                            System.out.print("Enter amount of dependants aged around 7-17 years old: ");
+                            teenDependant = input.nextDouble();
+                            System.out.print("Enter amount of dependants aged below 6 years old: ");
+                            toddlerDependant = input.nextDouble();
+                            System.out.print("Enter amount of disabled children: ");
+                            disabledDependant = input.nextDouble();
+                            System.out.print("Enter amount of dependant chronic patients: ");
+                            chronicDependant = input.nextDouble();
+                            System.out.print("Enter yearly cost of nursery & childcare center: ");
+                            nurseryCost = input.nextDouble();
+                            result = ZakatType.zakatPendapatan(yearlyProfit, adultDependant, studentDependant, teenDependant, toddlerDependant, disabledDependant, chronicDependant, nurseryCost);
                             break;
                     case 2: zakat="Zakat Perniagaan";
                             double income=0, netProfit=0, debtGiven=0, stock=0, unpaidDebt=0, tax=0, outstandingOperation=0;
