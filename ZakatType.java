@@ -65,13 +65,14 @@ public class ZakatType {
     public static double zakatPelaburan(double invValue, double profit){
         double result=0;
         double nisab = 35449.00;
-        
+
+        //calculate total income from the investment
         double invTotal = invValue+profit;
         
-        if(invTotal>=nisab){
-            result = invTotal*0.025;
+        if(invTotal>=nisab){ //to ensure total income reach minimum value for zakat compulsion
+            result = invTotal*0.025; //amount of zakat placed
         }else{
-            result = -1;
+            result = -1; //to signal no zakat payment is needed
         }
         
         return result;
@@ -80,18 +81,20 @@ public class ZakatType {
     public static double zakatASB(double asbValue, double dividend){
         double result=0;
         double nisab = 35449.00;
-        
+
+        //calculate total income from the ASB
         double asbTotal = asbValue+dividend;
         
-        if(asbTotal>=nisab){
-            result = asbTotal*0.025;
+        if(asbTotal>=nisab){ //to ensure total income reach minimum value for zakat compulsion
+            result = asbTotal*0.025; //amount of zakat placed
         }else{
-            result = -1;
+            result = -1; //to signal no zakat payment is needed
         }
         
         return result;
     }
 }
+
 
 
 
