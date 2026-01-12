@@ -46,9 +46,9 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatSimpanan(){
+    public static double zakatSimpanan(double saving, double payrate){
         double result=0;
-        
+        result= saving*payrate;
         return result;
     }
     
@@ -66,6 +66,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
