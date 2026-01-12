@@ -87,7 +87,7 @@ public class PersonalZakatManagement {
                             }else{
                                 System.out.println("\nYou does not meet the nisab to pay " + zakat);
                             }
-                            result = ZakatType.zakatASB();
+                        
                             break;
                     default: System.out.println("Invalid Input, Please enter only number 1 to 6 only");                
                 }
