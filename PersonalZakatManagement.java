@@ -65,8 +65,8 @@ public class PersonalZakatManagement {
                     case 4: zakat="Zakat Simpanan";
                             double saving=0, payrate=0.025;
                             System.out.print("Calculation of Zakat on Savings for the haul year: ");
-                            int year = input.nextln();
-                            System.out.print("Enter estimated Total Savings for the "+year+": ");
+                            int year = input.nextInt();
+                            System.out.print("Enter estimated Total Savings for the year "+year+": ");
                             saving= input.nextDouble();
                             result = ZakatType.zakatSimpanan(saving, payrate);
                             break;
