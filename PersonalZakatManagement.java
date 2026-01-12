@@ -44,20 +44,26 @@ public class PersonalZakatManagement {
                             result = ZakatType.zakatPendapatan(yearlyProfit, adultDependant, studentDependant, teenDependant, toddlerDependant, disabledDependant, chronicDependant, nurseryCost);
                             break;
                     case 2: zakat="Zakat Perniagaan";
-                            double income=0, netProfit=0, debtGiven=0, stock=0, unpaidDebt=0, tax=0, outstandingOperation=0;
+                            double[] asset = new double[4];
+                            double[] liability = new double[3];
+                            //Getting input from user
                             System.out.print("Enter net profit: ");
-                            netProfit= input.nextDouble();
+                            asset[0]= input.nextDouble();
                             System.out.print("Enter business bank balance: ");
-                            debtGiven= input.nextDouble();
+                            asset[1]= input.nextDouble();
                             System.out.print("Enter the pending amount of debt given: ");
-                            stock= input.nextDouble();
-                            System.out.print("Any unpaid debts?");
-                            unpaidDebt=input.nextDouble();
-                            System.out.print("Any unpaid tax?");
-                            tax=input.nextDouble();
-                            System.out.print("Any Outstanding Operations?");
-                            outstandingOperation=input.nextDouble();
-                            result = ZakatType.zakatPerniagaan(income, netProfit, debtGiven, stock, unpaidDebt, tax, outstandingOperation);
+                            asset[2]= input.nextDouble();
+                            System.out.println("Enter the overall value of stocks");
+                            asset[3]= input.nextDouble();
+                            System.out.print("Any unpaid debts? ");
+                            liability[0]=input.nextDouble();
+                            System.out.print("Any unpaid tax? ");
+                            liability[1]=input.nextDouble();
+                            System.out.print("Any Outstanding Operations? ");
+                            liability[2]=input.nextDouble();
+                            //calling zakatPerniagaan method to calculate zakat
+                            result = ZakatType.zakatPerniagaan(asset, liability);
+                            
                             break;
                     case 3: zakat="Zakat Emas"; 
                             double weightGold=0, priceGold=554, nisab=85, payrate=0.025;
