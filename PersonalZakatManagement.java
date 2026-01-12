@@ -26,24 +26,24 @@ public class PersonalZakatManagement {
                     case 1: zakat="Zakat Pendapatan";
                             double yearlyProfit;
                             double nurseryCost;
-                            double[] dependants = new double[6]; //array for easier input data access
+                            double[] dependants = new double[6]; // dependant array for easier input data access
                             System.out.print("Enter yearly net profit: ");
-                            yearlyProfit = input.nextDouble();
+                            yearlyProfit = input.nextDouble(); //store input
                             System.out.print("Enter amount of dependants that are above 18 years old: ");
-                            dependants[0] = input.nextDouble();
+                            dependants[0] = input.nextDouble(); //store input
                             System.out.print("Enter amount of dependants that is studying in IPT: ");
-                            dependants[1] = input.nextDouble();
+                            dependants[1] = input.nextDouble(); //store input
                             System.out.print("Enter amount of dependants aged around 7-17 years old: ");
-                            dependants[2] = input.nextDouble();
+                            dependants[2] = input.nextDouble(); //store input
                             System.out.print("Enter amount of dependants aged below 6 years old: ");
-                            dependants[3] = input.nextDouble();
+                            dependants[3] = input.nextDouble(); //store input
                             System.out.print("Enter amount of disabled children: ");
-                            dependants[4] = input.nextDouble();
+                            dependants[4] = input.nextDouble(); //store input
                             System.out.print("Enter amount of dependant chronic patients: ");
-                            dependants[5] = input.nextDouble();
+                            dependants[5] = input.nextDouble(); //store input
                             System.out.print("Enter yearly cost of nursery & childcare center: ");
-                            nurseryCost = input.nextDouble();
-                            result = ZakatType.zakatPendapatan(yearlyProfit, dependants, nurseryCost);
+                            nurseryCost = input.nextDouble(); //store input
+                            result = ZakatType.zakatPendapatan(yearlyProfit, dependants, nurseryCost); //call zakatPendapatan method to get result
                             break;
                     case 2: zakat="Zakat Perniagaan";
                             double[] asset = new double[4];
