@@ -40,8 +40,14 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatEmas(){
-        double result=0;
+    public static double zakatEmas(double weightGold, double priceGold, double nisab, double payrate){
+        double result=0, gold=0;
+        if(weightGold>=nisab){
+            gold= weightGold*priceGold;
+            result= gold*payrate;
+        }else{
+            result= -1;
+        }
         
         return result;
     }
@@ -68,6 +74,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
