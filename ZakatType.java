@@ -44,7 +44,7 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatEmas(double weightGold, double priceGold, double nisab, double payrate){
+    public static double zakatEmas(double weightGold, double priceGold, double nisab, double payrate){ //by Aiman : Zakat Emas Calculation
         double result=0, gold=0;
         if(weightGold>=nisab){ //if-else statement for nisab
             gold= weightGold*priceGold;
@@ -56,7 +56,7 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatSimpanan(double saving, double payrate){
+    public static double zakatSimpanan(double saving, double payrate){ //by Aiman : Zakat Simpanan Calculation
         double result=0;
         result= saving*payrate; //calculate zakat simpanan
         return result;
@@ -92,6 +92,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
