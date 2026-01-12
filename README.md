@@ -1,1 +1,1 @@
-# Zakat-Management
+# Personal-Zakat-Management
