@@ -53,7 +53,7 @@ public class PersonalZakatManagement {
                             asset[1]= input.nextDouble();
                             System.out.print("Enter the pending amount of debt given: ");
                             asset[2]= input.nextDouble();
-                            System.out.println("Enter the overall value of stocks");
+                            System.out.print("Enter the overall value of stocks: ");
                             asset[3]= input.nextDouble();
                             System.out.print("Any unpaid debts? ");
                             liability[0]=input.nextDouble();
