@@ -78,8 +78,21 @@ public class PersonalZakatManagement {
                             saving= input.nextDouble();
                             result = ZakatType.zakatSimpanan(saving, payrate);
                             break;
-                    case 5: result = ZakatType.zakatPelaburan();        
-                            zakat="Zakat Pelaburan";
+                    case 5: zakat="Zakat Pelaburan";
+                            double invNisab = 35449.00;
+                            
+                            System.out.println("\nEnter current investment value (RM): ");
+                            double invValue = input.nextDouble();
+                            
+                            if(invValue>=invNisab){
+                                System.out.print("Enter investment profit/divident (RM): ");
+                                double dividend = input.nextDouble(); 
+                                
+                                result = ZakatType.zakatPelaburan(invValue, dividend);
+                            }else{
+                                System.out.println("\nYou does not meet the nisab to pay " + zakat);
+                            }
+                    
                             break;
                     case 6: zakat="Zakat ASB";
                             double asbNisab = 35449.00;
