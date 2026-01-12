@@ -58,12 +58,15 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatASB(){
+    public static double zakatASB(double asbValue, double dividend){
         double result=0;
+        
+            result = (asbValue+dividend)*0.025;
         
         return result;
     }
 }
+
 
 
 
