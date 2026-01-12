@@ -41,14 +41,17 @@ public class PersonalZakatManagement {
                             System.out.print("Any Outstanding Operations?");
                             outstandingOperation=input.nextDouble();
                             result = ZakatType.zakatPerniagaan(income, netProfit, debtGiven, stock, unpaidDebt, tax, outstandingOperation);
-                            
                             break;
                     case 3: result = ZakatType.zakatEmas();
                             zakat="Zakat Emas";
                             break;
                     case 4: zakat="Zakat Simpanan";
-                            double saving=0, 
-                            result = ZakatType.zakatSimpanan();
+                            double saving=0, payrate=0.025;
+                            System.out.print("Calculation of Zakat on Savings for the haul year: ");
+                            int year = input.nextln();
+                            System.out.print("Enter estimated Total Savings for the "+year+": ");
+                            saving= input.nextDouble();
+                            result = ZakatType.zakatSimpanan(saving, payrate);
                             break;
                     case 5: result = ZakatType.zakatPelaburan();        
                             zakat="Zakat Pelaburan";
