@@ -85,7 +85,7 @@ public class PersonalZakatManagement {
                                 
                                 result = ZakatType.zakatASB(asbValue, dividend);
                             }else{
-                                System.out.println("\nYou does not meet the nisab to pay Zakat ASB");
+                                System.out.println("\nYou does not meet the nisab to pay " + zakat);
                             }
                             result = ZakatType.zakatASB();
                             break;
