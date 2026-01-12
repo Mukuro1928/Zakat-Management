@@ -52,22 +52,23 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatPelaburan(){
+    public static double zakatPelaburan(double invTotal){
         double result=0;
         
-        result = (invValue+dividend)*0.025;
+        result = invTotal*0.025;
         
         return result;
     }
     
-    public static double zakatASB(double asbValue, double dividend){
+    public static double zakatASB(double asbTotal){
         double result=0;
         
-        result = (asbValue+dividend)*0.025;
+        result = asbTotal*0.025;
         
         return result;
     }
 }
+
 
 
 
