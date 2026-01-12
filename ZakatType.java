@@ -70,7 +70,7 @@ public class ZakatType {
         double invTotal = invValue+profit;
         
         if(invTotal>=nisab){ //to ensure total income reach minimum value for zakat compulsion
-            result = invTotal*0.025; //amount of zakat placed
+            result = invTotal*0.025; //amount of zakat calculated
         }else{
             result = -1; //to signal no zakat payment is needed
         }
@@ -86,7 +86,7 @@ public class ZakatType {
         double asbTotal = asbValue+dividend;
         
         if(asbTotal>=nisab){ //to ensure total income reach minimum value for zakat compulsion
-            result = asbTotal*0.025; //amount of zakat placed
+            result = asbTotal*0.025; //amount of zakat calculated
         }else{
             result = -1; //to signal no zakat payment is needed
         }
@@ -94,6 +94,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
