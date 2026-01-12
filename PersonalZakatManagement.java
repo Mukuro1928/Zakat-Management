@@ -23,7 +23,7 @@ public class PersonalZakatManagement {
                 //Getting Input from user
                 choice= input.nextInt();    
                 switch(choice){
-                    case 1: zakat="Zakat Pendapatan"; //by Rizq
+                    case 1: zakat="Zakat Pendapatan";
                             double yearlyProfit;
                             double nurseryCost;
                             double[] dependants = new double[6]; // dependant array for easier input data access
@@ -45,71 +45,61 @@ public class PersonalZakatManagement {
                             nurseryCost = input.nextDouble(); //store input
                             result = ZakatType.zakatPendapatan(yearlyProfit, dependants, nurseryCost); //call zakatPendapatan method to get result
                             break;
-                    case 2: zakat="Zakat Perniagaan";
-                            double[] asset = new double[4];
-                            double[] liability = new double[3];
-                            //Getting input from user
+                    case 2: zakat="Zakat Perniagaan";//by Mukhlis
+                            double[] asset = new double[4];//declaration of array for asset
+                            double[] liability = new double[3];//declaration of array for liability
                             System.out.print("Enter net profit: ");
-                            asset[0]= input.nextDouble();
+                            asset[0]= input.nextDouble();//Getting input from user
                             System.out.print("Enter business bank balance: ");
-                            asset[1]= input.nextDouble();
+                            asset[1]= input.nextDouble();//Getting input from user
                             System.out.print("Enter the pending amount of debt given: ");
-                            asset[2]= input.nextDouble();
+                            asset[2]= input.nextDouble();//Getting input from user
                             System.out.print("Enter the overall value of stocks: ");
-                            asset[3]= input.nextDouble();
+                            asset[3]= input.nextDouble();//Getting input from user
                             System.out.print("Any unpaid debts? ");
-                            liability[0]=input.nextDouble();
+                            liability[0]=input.nextDouble();//Getting input from user
                             System.out.print("Any unpaid tax? ");
-                            liability[1]=input.nextDouble();
+                            liability[1]=input.nextDouble();//Getting input from user
                             System.out.print("Any Outstanding Operations? ");
-                            liability[2]=input.nextDouble();
-                            //calling zakatPerniagaan method to calculate zakat
-                            result = ZakatType.zakatPerniagaan(asset, liability);
+                            liability[2]=input.nextDouble();//Getting input from user                            
+                            result = ZakatType.zakatPerniagaan(asset, liability);//calling zakatPerniagaan method to calculate zakat
                 
                             break;
-                    case 3: zakat="Zakat Emas"; //by Aiman : Zakat Emas
+                    case 3: zakat="Zakat Emas"; 
                             double weightGold=0, priceGold=554, nisab=85, payrate=0.025; //declare weight and price for gold and nisab 
                             System.out.print("Gold Zakat calculation for the year: ");
                             int year = input.nextInt();
                             System.out.print("Total Weight(g) of Gold at the End of the Year "+year+": ");
                             weightGold = input.nextDouble();
-                            System.out.print("The Value of Gold Nisab for Zakat (Selangor 2025): "+nisab+"g");
-                            System.out.print("Current Gold Price (1g): RM"+priceGold);
+                            System.out.println("The Value of Gold Nisab for Zakat (Selangor 2025): "+nisab+"g");
+                            System.out.println("Current Gold Price (1g): RM"+priceGold);
                             result = ZakatType.zakatEmas(weightGold, priceGold, nisab, payrate); //zakat emas method
                         
                             break;
-                    case 4: zakat="Zakat Simpanan"; //by Aiman : Zakat Simpanan
+                    case 4: zakat="Zakat Simpanan";
                             double saving=0;
                             payrate=0.025; //declare variable saving and zakat rate
-                            System.out.print("Calculation of Zakat on Savings for the haul year: ");
+                            System.out.println("Calculation of Zakat on Savings for the haul year: ");
                             year = input.nextInt();
-                            System.out.print("Enter estimated Total Savings for the year "+year+": ");
+                            System.out.println("Enter estimated Total Savings for the year "+year+": ");
                             saving= input.nextDouble();
                             result = ZakatType.zakatSimpanan(saving, payrate); //zakat simpanan method
                         
                             break;
-                    case 5: zakat="Zakat Pelaburan";
-
-                            //getting the necessary input from user
+                    case 5: zakat="Zakat Pelaburan";                            
                             System.out.print("\nEnter ASB value you own (RM): ");
-                            double invValue = input.nextDouble();
+                            double invValue = input.nextDouble();//getting the necessary input from user
                             System.out.print("Enter ASB dividend (RM): ");
-                            double profit = input.nextDouble();
-
-                            //calling zakat pelaburan method, to perform calculation
-                            result = ZakatType.zakatPelaburan(invValue, profit);
+                            double profit = input.nextDouble();                            
+                            result = ZakatType.zakatPelaburan(invValue, profit);//calling zakat pelaburan method, to perform calculation
                                                
                             break;
-                    case 6: zakat="Zakat ASB";
-
-                            //getting the necessary input from user
+                    case 6: zakat="Zakat ASB";                            
                             System.out.print("\nEnter ASB value you own (RM): ");
-                            double asbValue = input.nextDouble();
+                            double asbValue = input.nextDouble();//getting the necessary input from user
                             System.out.print("Enter ASB dividend (RM): ");
-                            double dividend = input.nextDouble();
-
-                            //calling zakat asb method, to perform calculation
-                            result = ZakatType.zakatASB(asbValue, dividend);
+                            double dividend = input.nextDouble();                            
+                            result = ZakatType.zakatASB(asbValue, dividend);//calling zakat asb method, to perform calculation
                             
                             break;
                     default: System.out.println("Invalid Input, Please enter only number 1 to 6 only");                
@@ -128,7 +118,7 @@ public class PersonalZakatManagement {
                 System.out.println("An unexpected error has occured: " + e.getMessage());
             }      
         }while(choice!=1 && choice!=2 && choice!=3 && choice!=4 && choice!=5 && choice!=6);
-        if( result!=-1){
+        if( result!=-1){//Showing the amount of zakat needed to be paid
             System.out.print("The total " + zakat + " you have to pay is RM");
             //Rounding the numbers to 2 decimal places.
             System.out.format("%.2f", result);
