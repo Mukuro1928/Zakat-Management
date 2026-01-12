@@ -8,16 +8,16 @@ public class ZakatType {
 
         //calculating total deduction based on rates
         for (int i = 0; i < dependants.length; i++) {
-        totalDeduction += dependants[i] * rates[i];
+        totalDeduction += dependants[i] * rates[i]; //calculating dependants based on their respective rate and summing them up in totalDeduction
         }
         
         totalDeduction += Math.min(nurseryCost, 3960);
-        EPF = yearlyProfit * 0.11;
-        totalDeduction += EPF;
-        netIncome = yearlyProfit - totalDeduction;
+        EPF = yearlyProfit * 0.11; //calculate the EPF contribution based on your yearly profit 
+        totalDeduction += EPF; // adds EPF to totalDeduction as final
+        netIncome = yearlyProfit - totalDeduction; // calculate net income
         
-        if(netIncome >= 35449){
-            result = netIncome * (0.025);
+        if(netIncome >= 35449){ //checks if elligible for Zakat
+            result = netIncome * (0.025); //calculate total Zakat Pendapatan
         }else{
             result = -1;
         }
@@ -92,6 +92,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
