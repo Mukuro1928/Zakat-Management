@@ -1,22 +1,23 @@
 package personalzakatmanagement;
 
 public class ZakatType {
-    public static double zakatPendapatan(double yearlyProfit, double adultDependant, double studentDependant, double teenDependant, double toddlerDependant, double disabledDependant, double chronicDependant, double nurseryCost ){
-        double result=0;
-        double EPF, totalDeduction, netIncome;
-        adultDependant *= 4944;
-        studentDependant *= 7356;
-        teenDependant *= 4896;
-        toddlerDependant *= 2100;
-        disabledDependant *= 2964;
-        chronicDependant *= 2916;
-        nurseryCost *= 3960;
+    public static double zakatPendapatan(double yearlyProfit, double[] dependants, double nurseryCost){
+        double result = 0, totalDeduction = 0;
+        double EPF, netIncome;
+        double[] rates = {4944, 7356, 4896, 2100, 2964, 2916};
+
+        //calculating total deduction based on rates
+        for (int i = 0; i < dependants.length; i++) {
+        totalDeduction += dependants[i] * rates[i];
+        }
+        
+        totalDeduction += Math.min(nurseryCost, 3960);
         EPF = yearlyProfit * 0.11;
-        totalDeduction = adultDependant + studentDependant + teenDependant + toddlerDependant + disabledDependant + chronicDependant + nurseryCost + EPF;
+        totalDeduction += EPF;
         netIncome = yearlyProfit - totalDeduction;
         
         if(netIncome >= 35449){
-            result = netIncome*(0.025);
+            result = netIncome * (0.025);
         }else{
             result = -1;
         }
@@ -91,6 +92,7 @@ public class ZakatType {
         return result;
     }
 }
+
 
 
 
