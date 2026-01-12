@@ -88,22 +88,26 @@ public class PersonalZakatManagement {
                         
                             break;
                     case 5: zakat="Zakat Pelaburan";
-                            
+
+                            //getting the necessary input from user
                             System.out.print("\nEnter ASB value you own (RM): ");
                             double invValue = input.nextDouble();
                             System.out.print("Enter ASB dividend (RM): ");
                             double profit = input.nextDouble();
-                            
+
+                            //calling zakat pelaburan method, to perform calculation
                             result = ZakatType.zakatPelaburan(invValue, profit);
                                                
                             break;
                     case 6: zakat="Zakat ASB";
-                            
+
+                            //getting the necessary input from user
                             System.out.print("\nEnter ASB value you own (RM): ");
                             double asbValue = input.nextDouble();
                             System.out.print("Enter ASB dividend (RM): ");
                             double dividend = input.nextDouble();
-                            
+
+                            //calling zakat asb method, to perform calculation
                             result = ZakatType.zakatASB(asbValue, dividend);
                             
                             break;
