@@ -1,10 +1,10 @@
 package personalzakatmanagement;
 
 public class ZakatType {
-    public static double zakatPendapatan(double yearlyProfit, double[] dependants, double nurseryCost){ //by Rizq
+    public static double zakatPendapatan(double yearlyProfit, double[] dependants, double nurseryCost){//by Rizq
         double result = 0, totalDeduction = 0;
         double EPF, netIncome;
-        double[] rates = {4944, 7356, 4896, 2100, 2964, 2916}; // assigning respective rate for each dependant category
+        double[] rates = {4944, 7356, 4896, 2100, 2964, 2916};
 
         //calculating total deduction based on rates
         for (int i = 0; i < dependants.length; i++) {
@@ -24,17 +24,17 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatPerniagaan(double[] income,double[]  spending){
+    public static double zakatPerniagaan(double[] asset,double[]  liability){//by Mukhlis
         double result=0;
-        double liability=0, asset=0, totalWealth=0;
-        for(int i=0;i<income.length;i++){
-           asset+=income[i];
+        double sumLiability=0, sumAsset=0, totalWealth=0, currentNisab=49300;
+        for(int i=0;i<asset.length;i++){//Summing all the asset
+           sumAsset+=asset[i];
         }
-        for(int i=0;i<spending.length;i++){
-           asset+=spending[i];
+        for(int i=0;i<liability.length;i++){//Summing all the liability
+           sumLiability+=liability[i];
         }
-        totalWealth= asset - liability;
-        if(totalWealth>=49300){
+        totalWealth= sumAsset - sumLiability;
+        if(totalWealth>=currentNisab){//calculate zakat perniagaan
             result=totalWealth*(2.5/100);
         }
         else {
@@ -44,7 +44,7 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatEmas(double weightGold, double priceGold, double nisab, double payrate){ //by Aiman : Zakat Emas Calculation
+    public static double zakatEmas(double weightGold, double priceGold, double nisab, double payrate){//by Aiman
         double result=0, gold=0;
         if(weightGold>=nisab){ //if-else statement for nisab
             gold= weightGold*priceGold;
@@ -56,13 +56,13 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatSimpanan(double saving, double payrate){ //by Aiman : Zakat Simpanan Calculation
+    public static double zakatSimpanan(double saving, double payrate){//by Aiman
         double result=0;
         result= saving*payrate; //calculate zakat simpanan
         return result;
     }
     
-    public static double zakatPelaburan(double invValue, double profit){
+    public static double zakatPelaburan(double invValue, double profit){//by Hidayat
         double result=0;
         double nisab = 35449.00;
 
@@ -78,7 +78,7 @@ public class ZakatType {
         return result;
     }
     
-    public static double zakatASB(double asbValue, double dividend){
+    public static double zakatASB(double asbValue, double dividend){//by Hidayat
         double result=0;
         double nisab = 35449.00;
 
@@ -94,20 +94,3 @@ public class ZakatType {
         return result;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
