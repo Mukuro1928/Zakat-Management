@@ -1,6 +1,7 @@
 package personalzakatmanagement;
 
 import java.util.*;
+import java.io.*;
 
 public class PersonalZakatManagement {
 
@@ -65,7 +66,7 @@ public class PersonalZakatManagement {
                             result = ZakatType.zakatPerniagaan(asset, liability);//calling zakatPerniagaan method to calculate zakat
                 
                             break;
-                    case 3: zakat="Zakat Emas"; 
+                    case 3: zakat="Zakat Emas"; //by Aiman
                             double weightGold=0, priceGold=554, nisab=85, payrate=0.025; //declare weight and price for gold and nisab 
                             System.out.print("Gold Zakat calculation for the year: ");
                             int year = input.nextInt();
@@ -76,7 +77,7 @@ public class PersonalZakatManagement {
                             result = ZakatType.zakatEmas(weightGold, priceGold, nisab, payrate); //zakat emas method
                         
                             break;
-                    case 4: zakat="Zakat Simpanan";
+                    case 4: zakat="Zakat Simpanan"; //by Aiman
                             double saving=0;
                             payrate=0.025; //declare variable saving and zakat rate
                             System.out.println("Calculation of Zakat on Savings for the haul year: ");
@@ -118,13 +119,26 @@ public class PersonalZakatManagement {
                 System.out.println("An unexpected error has occured: " + e.getMessage());
             }      
         }while(choice!=1 && choice!=2 && choice!=3 && choice!=4 && choice!=5 && choice!=6);
-        if( result!=-1){//Showing the amount of zakat needed to be paid
-            System.out.print("The total " + zakat + " you have to pay is RM");
-            //Rounding the numbers to 2 decimal places.
-            System.out.format("%.2f", result);
+        
+        try (PrintWriter writer = new PrintWriter("ResultZakat.txt")) {     
+            if( result!=-1){//Showing the amount of zakat needed to be paid
+                System.out.print("The total " + zakat + " you have to pay is RM");
+                //Rounding the numbers to 2 decimal places.
+                System.out.format("%.2f", result);
+                writer.println("Result:");
+                writer.print("The amount of "+ zakat + " you need to pay is RM");
+                writer.printf("%.2f",result);
+                System.out.println("\nData is written succesfully in ResultZakat.txt");             
+                }
+            else{
+                writer.println("You do not meet the nisab required to pay " + zakat);
+                System.out.println("You do not meet the nisab required to pay " + zakat);
+
+            }
+            // The writer is automatically closed when exiting the try block
         }
-        else{
-            System.out.println("You do not meet the nisab required to pay " + zakat);
+        catch (IOException e) {
+                System.out.println("An error occured: "+ e.getMessage()); 
         }
     }
 }
